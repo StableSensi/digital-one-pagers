@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pay by Bank | Aryze</title>
+    <meta
+      name="description"
+      content="Pay by Bank helps UK merchants reduce card friction and understand potential payment savings."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand-mark" href="index.html">
+          <img src="assets/aryze-logo-wordmark.png" alt="Aryze" />
+        </a>
+        <a class="back-link" href="index.html">Overview</a>
+      </header>
+
+      <main class="content-wrap">
+        <section class="pay-hero">
+          <div class="hero-message">
+            <p class="section-label">Pay by Bank</p>
+            <h1>Stop letting card fees scale with your growth.</h1>
+            <p class="hero-copy">
+              For casinos, iGaming, and high-volume merchants that need
+              predictable pricing, fewer disputes, and faster deposits.
+            </p>
+            <div class="button-row">
+              <a class="button button-solid" href="#calculator">
+                Calculate savings
+              </a>
+              <a class="button button-ghost" href="#demo">Book demo</a>
+            </div>
+          </div>
+          <div class="hero-metric">
+            <span>Best fit</span>
+            <strong>
+              Casinos, iGaming, betting, and high-volume deposit flows.
+            </strong>
+            <div class="hero-proof">
+              <p>Tiered flat fees</p>
+              <p>Near-zero chargebacks</p>
+              <p>Mastercard Open Banking rails</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block problem-block" aria-labelledby="payment-pain-title">
+          <div class="section-intro">
+            <p class="section-label">Payment pain</p>
+            <h2 id="payment-pain-title">Is your checkout costing you?</h2>
+            <p class="body-copy">
+              The three costs most high-volume merchants feel first.
+            </p>
+          </div>
+
+          <div class="issue-grid">
+            <article class="issue-card">
+              <h3>High card fees</h3>
+              <p>Percentage costs grow with every deposit.</p>
+            </article>
+            <article class="issue-card">
+              <h3>Chargebacks drain time</h3>
+              <p>Disputes cost revenue and operational focus.</p>
+            </article>
+            <article class="issue-card">
+              <h3>Players abandon deposits</h3>
+              <p>Card details add friction at checkout.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block value-block compact-value-block" aria-labelledby="aryze-gains-title">
+          <div class="section-intro">
+            <p class="section-label">What changes</p>
+            <h2 id="aryze-gains-title">What merchants gain.</h2>
+            <p class="body-copy">
+              A new payment method without rebuilding your checkout.
+            </p>
+          </div>
+
+          <div class="feature-grid compact-feature-grid">
+            <article class="feature-card compact-feature-card">
+              <h3>Tiered flat fees</h3>
+              <p>Predictable pricing at scale.</p>
+            </article>
+            <article class="feature-card compact-feature-card">
+              <h3>Near-zero chargebacks</h3>
+              <p>Irrevocable A2A payments.</p>
+            </article>
+            <article class="feature-card compact-feature-card">
+              <h3>No card details</h3>
+              <p>Players pay from their bank.</p>
+            </article>
+            <article class="feature-card compact-feature-card">
+              <h3>SCA authentication</h3>
+              <p>Bank-level approval flow.</p>
+            </article>
+            <article class="feature-card compact-feature-card mastercard-card">
+              <div class="mastercard-mark" aria-label="Mastercard">
+                <span class="mastercard-circle mastercard-red"></span>
+                <span class="mastercard-circle mastercard-orange"></span>
+              </div>
+              <h3>Mastercard rails</h3>
+              <p>Built for deposits at scale.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="calculator" class="calculator-panel focus-calculator">
+          <div class="calculator-grid">
+            <div>
+              <p class="section-label muted">Savings calculator</p>
+              <h2>Estimate the saving in seconds.</h2>
+              <p class="body-copy">
+                Compare card percentage fees with Aryze fixed transaction
+                pricing.
+              </p>
+              <div class="calculator-trust-row" aria-label="Calculator assumptions">
+                <span>Fixed transaction tiers</span>
+                <span>Card fee comparison</span>
+                <span>Indicative estimate</span>
+              </div>
+
+              <form class="calculator-form" id="pay-by-bank-form">
+                <label>
+                  <span>Monthly transactions</span>
+                  <select id="monthlyTransactions" name="monthlyTransactions">
+                    <option value="750000">Under 1M</option>
+                    <option value="1000000" selected>1M - 2.5M</option>
+                    <option value="5000000">2.5M - 10M</option>
+                    <option value="25000000">10M - 50M</option>
+                    <option value="75000000">50M - 100M</option>
+                    <option value="125000000">100M+</option>
+                  </select>
+                </label>
+
+                <label>
+                  <span>Average payment amount</span>
+                  <select id="averageTransactionValue" name="averageTransactionValue">
+                    <option value="10">Under 20</option>
+                    <option value="25">20 - 35</option>
+                    <option value="50" selected>35 - 75</option>
+                    <option value="100">75 - 150</option>
+                    <option value="250">150+</option>
+                  </select>
+                </label>
+
+                <label>
+                  <span>Current card fee %</span>
+                  <input
+                    id="currentCardFeePercent"
+                    name="currentCardFeePercent"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value="2.5"
+                  />
+                </label>
+
+                <label>
+                  <span>Currency</span>
+                  <select id="currency" name="currency">
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="USD">USD</option>
+                    <option value="DKK">DKK</option>
+                  </select>
+                </label>
+              </form>
+            </div>
+
+            <div class="results-stack">
+              <article class="main-result-card savings-result">
+                <p class="section-label muted">Potential saving</p>
+                <p id="mainResultLabel" class="result-label">
+                  Estimated monthly savings
+                </p>
+                <p id="mainResultValue" class="main-result-value"></p>
+                <p id="savingsSupport" class="result-support"></p>
+                <p id="pricingMessage" class="body-copy compact-copy"></p>
+              </article>
+
+              <div class="result-grid color-results">
+                <article class="result-card volume-card">
+                  <p class="section-label muted">Monthly payment volume</p>
+                  <p id="monthlyVolumeValue" class="result-value"></p>
+                </article>
+                <article class="result-card card-cost-card">
+                  <p class="section-label muted">Current card cost</p>
+                  <p id="currentCardCostValue" class="result-value"></p>
+                </article>
+                <article class="result-card yearly-card">
+                  <p class="section-label muted">Estimated yearly savings</p>
+                  <p id="yearlySavingsValue" class="result-value"></p>
+                </article>
+                <article class="result-card break-even-card">
+                  <p class="section-label muted">Break-even transaction value</p>
+                  <p id="breakEvenValue" class="result-value"></p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block onboarding-block" aria-labelledby="onboarding-title">
+          <div class="section-intro">
+            <p class="section-label">Onboarding</p>
+            <h2 id="onboarding-title">From flow mapping to live payments.</h2>
+            <p class="body-copy">
+              We map the flow, complete KYB, integrate, test, and launch.
+            </p>
+          </div>
+
+          <div class="process-rail" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="onboarding-grid">
+            <article class="step-card">
+              <span>1</span>
+              <h3>Map</h3>
+              <p>Understand your deposit flow, markets, volume, and friction.</p>
+            </article>
+            <article class="step-card">
+              <span>2</span>
+              <h3>KYB</h3>
+              <p>Collect company details, required documents, and approvals.</p>
+            </article>
+            <article class="step-card">
+              <span>3</span>
+              <h3>Integrate & test</h3>
+              <p>Set up payment flows, callbacks, reporting, and test journeys.</p>
+            </article>
+            <article class="step-card">
+              <span>4</span>
+              <h3>Launch</h3>
+              <p>Go live with monitoring, support, and a clear handover.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block about-aryze-block" aria-labelledby="about-aryze-title">
+          <div class="about-aryze-copy">
+            <p class="section-label">About Aryze</p>
+            <h2 id="about-aryze-title">Built for predictable money movement.</h2>
+            <p class="body-copy">
+              Founded in Denmark in 2017, Aryze PSP builds payment infrastructure
+              for predictable money movement.
+            </p>
+          </div>
+
+          <div class="about-aryze-points" aria-label="Aryze trust points">
+            <article>
+              <span>Focus</span>
+              <p>Bank payments and digital money infrastructure.</p>
+            </article>
+            <article>
+              <span>Market</span>
+              <p>Serving regulated and payment-heavy merchants.</p>
+            </article>
+            <article>
+              <span>Access</span>
+              <p>UK licence via partnership. Mastercard Open Banking rails.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="demo" class="demo-panel">
+          <div class="demo-copy">
+            <p class="section-label muted">Book demo</p>
+            <h2>Ready to see what Pay by Bank could save you?</h2>
+            <p class="body-copy">
+              Book a short call and we&apos;ll map your payment flow and potential
+              fit.
+            </p>
+          </div>
+
+          <div class="demo-actions">
+            <a
+              class="button button-solid demo-fallback"
+              href="https://cal.com/rabiiahmadesteitie/lets-connect"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Book demo
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
