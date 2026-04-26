@@ -21,17 +21,13 @@
     return document.getElementById("currency").value;
   }
 
-  // Pricing tiers are used only to calculate the customer's indicative saving.
+  // Pricing bands are used only to calculate the customer's indicative saving.
   function getPayByBankUnitPrice(monthlyTransactions) {
-    if (monthlyTransactions < 10000000) {
-      return 2.5;
+    if (monthlyTransactions < 1000000) {
+      return 1.0;
     }
 
-    if (monthlyTransactions < 100000000) {
-      return 2.0;
-    }
-
-    return 1.5;
+    return 0.5;
   }
 
   function formatCurrency(amount, currency) {
@@ -39,6 +35,15 @@
       style: "currency",
       currency: currency,
       maximumFractionDigits: 0,
+    }).format(amount);
+  }
+
+  function formatUnitPrice(amount, currency) {
+    return new Intl.NumberFormat(localeByCurrency[currency], {
+      style: "currency",
+      currency: currency,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     }).format(amount);
   }
 
@@ -55,8 +60,6 @@
     const aryzeInternalCost = monthlyTransactions * unitPrice;
     const estimatedMonthlySavings = currentCardCost - aryzeInternalCost;
     const estimatedYearlySavings = estimatedMonthlySavings * 12;
-    const breakEvenAverageTransactionValue =
-      currentCardFeeDecimal > 0 ? unitPrice / currentCardFeeDecimal : null;
 
     const resultCard = document.querySelector(".savings-result");
     const mainResultLabel = document.getElementById("mainResultLabel");
@@ -81,7 +84,7 @@
         currency,
       );
       savingsSupport.textContent =
-        "Card fees compared with Aryze fixed transaction pricing.";
+        "Card fees compared with indicative fixed transaction pricing.";
     }
 
     pricingMessage.textContent = "";
@@ -91,10 +94,7 @@
       estimatedMonthlySavings < 0
         ? "No estimated saving"
         : formatCurrency(estimatedYearlySavings, currency);
-    breakEvenValue.textContent =
-      breakEvenAverageTransactionValue === null
-        ? "Fee required"
-        : formatCurrency(breakEvenAverageTransactionValue, currency);
+    breakEvenValue.textContent = `${formatUnitPrice(unitPrice, currency)} / tx`;
   }
 
   form.addEventListener("input", updateCalculator);

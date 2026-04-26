@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -123,14 +123,8 @@
               <h2>Estimate the saving in seconds.</h2>
               <p class="body-copy">
                 Compare card percentage fees with Aryze fixed transaction
-                pricing.
+                pricing across two simple volume bands.
               </p>
-              <div class="calculator-trust-row" aria-label="Calculator assumptions">
-                <span>Fixed transaction tiers</span>
-                <span>Card fee comparison</span>
-                <span>Indicative estimate</span>
-              </div>
-
               <form class="calculator-form" id="pay-by-bank-form">
                 <label>
                   <span>Monthly transactions</span>
@@ -177,6 +171,7 @@
                   </select>
                 </label>
               </form>
+
             </div>
 
             <div class="results-stack">
@@ -189,6 +184,11 @@
                 <p id="savingsSupport" class="result-support"></p>
                 <p id="pricingMessage" class="body-copy compact-copy"></p>
               </article>
+
+              <p class="calculator-disclaimer">
+                Indicative estimate only. Aryze uses fixed per-transaction
+                pricing bands based on monthly transaction volume.
+              </p>
 
               <div class="result-grid color-results">
                 <article class="result-card volume-card">
@@ -204,7 +204,7 @@
                   <p id="yearlySavingsValue" class="result-value"></p>
                 </article>
                 <article class="result-card break-even-card">
-                  <p class="section-label muted">Break-even transaction value</p>
+                  <p class="section-label muted">Aryze fixed price</p>
                   <p id="breakEvenValue" class="result-value"></p>
                 </article>
               </div>

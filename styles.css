@@ -77,14 +77,6 @@ a {
   text-decoration: none;
 }
 
-.brand-mark,
-.back-link,
-.button,
-.text-link,
-.section-label {
-  font-family: "IBM Plex Mono", monospace;
-}
-
 .brand-mark {
   display: inline-flex;
   align-items: center;
@@ -103,9 +95,8 @@ a {
   border-radius: 8px;
   background: var(--surface);
   color: var(--muted);
-  font-size: 0.76rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 0.86rem;
+  font-weight: 500;
 }
 
 .journey-nav {
@@ -128,12 +119,10 @@ a {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.78);
   color: var(--muted);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0;
   text-decoration: none;
-  text-transform: uppercase;
   transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
@@ -214,10 +203,9 @@ a {
 .section-label {
   margin: 0;
   color: var(--quiet);
-  font-size: 0.74rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .button-row {
@@ -235,10 +223,9 @@ a {
   padding: 12px 16px;
   border: 1px solid transparent;
   border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
   cursor: pointer;
   transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
@@ -264,10 +251,9 @@ a {
   display: inline-flex;
   margin-top: 20px;
   color: var(--blue);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .product-grid,
@@ -354,10 +340,9 @@ a {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.78);
   color: var(--muted);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 .product-card h2 {
@@ -402,10 +387,9 @@ a {
 .hero-metric span {
   display: block;
   color: rgba(255, 255, 255, 0.64);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 .hero-metric strong {
@@ -660,8 +644,8 @@ a {
   border-radius: 999px;
   background: var(--navy);
   color: white;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
 .payment-flow strong {
@@ -777,28 +761,6 @@ a {
   margin-top: 18px;
 }
 
-.calculator-trust-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
-}
-
-.calculator-trust-row span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 7px 10px;
-  border: 1px solid rgba(18, 20, 23, 0.08);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--muted);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
 .calculator-form label {
   display: grid;
   gap: 8px;
@@ -833,6 +795,13 @@ a {
 .results-stack {
   display: grid;
   gap: 12px;
+}
+
+.calculator-disclaimer {
+  margin: -2px 0 0;
+  color: var(--quiet);
+  font-size: 0.84rem;
+  line-height: 1.4;
 }
 
 .main-result-card {
@@ -1012,9 +981,8 @@ a {
   border: 1px solid rgba(25, 34, 53, 0.14);
   background: #ffffff;
   color: var(--navy);
-  font-family: "IBM Plex Mono", monospace;
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .demo-panel {
