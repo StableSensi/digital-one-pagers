@@ -84,7 +84,7 @@
         currency,
       );
       savingsSupport.textContent =
-        "Card fees compared with indicative fixed transaction pricing.";
+        "Based on your current card fee compared with indicative Aryze fixed transaction pricing.";
     }
 
     pricingMessage.textContent = "";

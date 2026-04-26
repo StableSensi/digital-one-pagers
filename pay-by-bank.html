@@ -38,7 +38,7 @@
               <a class="button button-solid" href="#calculator">
                 Calculate savings
               </a>
-              <a class="button button-ghost" href="#demo">Book demo</a>
+              <a class="button button-ghost" href="#demo">Talk to us</a>
             </div>
           </div>
           <div class="hero-metric">
@@ -117,62 +117,67 @@
         </section>
 
         <section id="calculator" class="calculator-panel focus-calculator">
-          <div class="calculator-grid">
+          <div class="calculator-header">
             <div>
               <p class="section-label muted">Savings calculator</p>
-              <h2>Estimate the saving in seconds.</h2>
+              <h2>Estimate your savings.</h2>
               <p class="body-copy">
-                Compare card percentage fees with Aryze fixed transaction
-                pricing across two simple volume bands.
+                See what fixed pricing could mean for your business.
               </p>
-              <form class="calculator-form" id="pay-by-bank-form">
-                <label>
-                  <span>Monthly transactions</span>
-                  <select id="monthlyTransactions" name="monthlyTransactions">
-                    <option value="750000">Under 1M</option>
-                    <option value="1000000" selected>1M - 2.5M</option>
-                    <option value="5000000">2.5M - 10M</option>
-                    <option value="25000000">10M - 50M</option>
-                    <option value="75000000">50M - 100M</option>
-                    <option value="125000000">100M+</option>
-                  </select>
-                </label>
-
-                <label>
-                  <span>Average payment amount</span>
-                  <select id="averageTransactionValue" name="averageTransactionValue">
-                    <option value="10">Under 20</option>
-                    <option value="25">20 - 35</option>
-                    <option value="50" selected>35 - 75</option>
-                    <option value="100">75 - 150</option>
-                    <option value="250">150+</option>
-                  </select>
-                </label>
-
-                <label>
-                  <span>Current card fee %</span>
-                  <input
-                    id="currentCardFeePercent"
-                    name="currentCardFeePercent"
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value="2.5"
-                  />
-                </label>
-
-                <label>
-                  <span>Currency</span>
-                  <select id="currency" name="currency">
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                    <option value="USD">USD</option>
-                    <option value="DKK">DKK</option>
-                  </select>
-                </label>
-              </form>
-
             </div>
+            <p class="calculator-disclaimer">
+              Indicative estimate only. Actual pricing depends on transaction
+              volume, payment flow, and commercial setup.
+            </p>
+          </div>
+
+          <div class="calculator-grid">
+            <form class="calculator-form" id="pay-by-bank-form">
+              <label>
+                <span>Monthly transactions</span>
+                <select id="monthlyTransactions" name="monthlyTransactions">
+                  <option value="750000">Under 1M</option>
+                  <option value="1000000" selected>1M - 2.5M</option>
+                  <option value="5000000">2.5M - 10M</option>
+                  <option value="25000000">10M - 50M</option>
+                  <option value="75000000">50M - 100M</option>
+                  <option value="125000000">100M+</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Average payment amount</span>
+                <select id="averageTransactionValue" name="averageTransactionValue">
+                  <option value="10">Under 20</option>
+                  <option value="25">20 - 35</option>
+                  <option value="50" selected>35 - 75</option>
+                  <option value="100">75 - 150</option>
+                  <option value="250">150+</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Current card fee %</span>
+                <input
+                  id="currentCardFeePercent"
+                  name="currentCardFeePercent"
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  value="2.5"
+                />
+              </label>
+
+              <label>
+                <span>Currency</span>
+                <select id="currency" name="currency">
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="USD">USD</option>
+                  <option value="DKK">DKK</option>
+                </select>
+              </label>
+            </form>
 
             <div class="results-stack">
               <article class="main-result-card savings-result">
@@ -184,11 +189,6 @@
                 <p id="savingsSupport" class="result-support"></p>
                 <p id="pricingMessage" class="body-copy compact-copy"></p>
               </article>
-
-              <p class="calculator-disclaimer">
-                Indicative estimate only. Aryze uses fixed per-transaction
-                pricing bands based on monthly transaction volume.
-              </p>
 
               <div class="result-grid color-results">
                 <article class="result-card volume-card">
@@ -214,10 +214,11 @@
 
         <section class="section-block onboarding-block" aria-labelledby="onboarding-title">
           <div class="section-intro">
-            <p class="section-label">Onboarding</p>
-            <h2 id="onboarding-title">From flow mapping to live payments.</h2>
+            <p class="section-label">Implementation</p>
+            <h2 id="onboarding-title">From payment flow to live processing.</h2>
             <p class="body-copy">
-              We map the flow, complete KYB, integrate, test, and launch.
+              We map your payment flow, complete KYB, integrate, test, and
+              support launch.
             </p>
           </div>
 
@@ -231,12 +232,12 @@
           <div class="onboarding-grid">
             <article class="step-card">
               <span>1</span>
-              <h3>Map</h3>
-              <p>Understand your deposit flow, markets, volume, and friction.</p>
+              <h3>Map payment flow</h3>
+              <p>Understand your deposit flow, markets, volume, and current payment friction.</p>
             </article>
             <article class="step-card">
               <span>2</span>
-              <h3>KYB</h3>
+              <h3>Complete KYB</h3>
               <p>Collect company details, required documents, and approvals.</p>
             </article>
             <article class="step-card">
@@ -246,8 +247,8 @@
             </article>
             <article class="step-card">
               <span>4</span>
-              <h3>Launch</h3>
-              <p>Go live with monitoring, support, and a clear handover.</p>
+              <h3>Go live</h3>
+              <p>Launch with monitoring, support, and a clear handover.</p>
             </article>
           </div>
         </section>
@@ -280,7 +281,7 @@
 
         <section id="demo" class="demo-panel">
           <div class="demo-copy">
-            <p class="section-label muted">Book demo</p>
+            <p class="section-label muted">Talk to us</p>
             <h2>Ready to see what Pay by Bank could save you?</h2>
             <p class="body-copy">
               Book a short call and we&apos;ll map your payment flow and potential
@@ -295,7 +296,7 @@
               target="_blank"
               rel="noreferrer"
             >
-              Book demo
+              Talk to us
             </a>
           </div>
         </section>

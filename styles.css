@@ -722,8 +722,9 @@ a {
   background:
     linear-gradient(180deg, #ffffff, #f8fafc);
   border-color: rgba(18, 20, 23, 0.1);
-  box-shadow: 0 28px 80px rgba(18, 20, 23, 0.12);
+  box-shadow: 0 22px 56px rgba(18, 20, 23, 0.1);
   position: relative;
+  overflow: hidden;
 }
 
 .focus-calculator::before {
@@ -731,17 +732,26 @@ a {
   position: absolute;
   top: 0;
   left: 32px;
-  right: 32px;
-  height: 3px;
+  right: auto;
+  width: min(210px, calc(100% - 64px));
+  height: 4px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--green), var(--yellow), var(--blue));
+  background: var(--green);
+}
+
+.calculator-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 330px);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 22px;
 }
 
 .calculator-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: 30px;
-  align-items: start;
+  grid-template-columns: minmax(310px, 0.86fr) minmax(0, 1.14fr);
+  gap: 18px;
+  align-items: stretch;
 }
 
 .calculator-panel h2,
@@ -749,41 +759,68 @@ a {
 .closing-card h2 {
   margin: 8px 0 0;
   color: var(--ink);
-  font-size: 2.35rem;
+  font-size: 2rem;
   line-height: 1.08;
   letter-spacing: 0;
+}
+
+.calculator-header h2 {
+  max-width: 13ch;
+}
+
+.calculator-header .body-copy {
+  max-width: 37rem;
+  margin-top: 12px;
 }
 
 .calculator-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 18px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(18, 20, 23, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  align-content: start;
+  height: 100%;
 }
 
 .calculator-form label {
   display: grid;
-  gap: 8px;
+  gap: 6px;
   min-width: 0;
 }
 
 .calculator-form span {
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .calculator-form input,
 .calculator-form select {
   width: 100%;
-  min-height: 52px;
-  padding: 12px 13px;
+  min-height: 46px;
+  padding: 9px 12px;
   border: 1px solid rgba(18, 20, 23, 0.12);
   border-radius: 8px;
   background: #ffffff;
   color: var(--ink);
   font: inherit;
   box-shadow: 0 1px 0 rgba(18, 20, 23, 0.03);
+}
+
+.calculator-form input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.calculator-form input[type="number"]::-webkit-outer-spin-button,
+.calculator-form input[type="number"]::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
 }
 
 .calculator-form input:focus,
@@ -794,17 +831,25 @@ a {
 
 .results-stack {
   display: grid;
-  gap: 12px;
+  gap: 10px;
+  align-content: stretch;
 }
 
 .calculator-disclaimer {
-  margin: -2px 0 0;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(18, 20, 23, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
   color: var(--quiet);
-  font-size: 0.84rem;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  line-height: 1.35;
 }
 
 .main-result-card {
+  display: grid;
+  align-content: center;
+  min-height: 168px;
   padding: 22px;
   box-shadow: none;
 }
@@ -857,7 +902,7 @@ a {
 
 .main-result-value {
   color: white;
-  font-size: 2.65rem;
+  font-size: 2.5rem;
   line-height: 1.04;
 }
 
@@ -867,12 +912,15 @@ a {
 
 .result-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
+  align-items: stretch;
 }
 
 .result-card {
-  min-height: 108px;
-  padding: 16px;
+  display: grid;
+  align-content: center;
+  min-height: 104px;
+  padding: 15px;
   border-color: rgba(18, 20, 23, 0.09);
   background: #ffffff;
   box-shadow: none;
@@ -1104,6 +1152,7 @@ a {
   .pay-hero,
   .product-grid,
   .customer-strip,
+  .calculator-header,
   .calculator-grid,
   .calculator-form,
   .demo-panel,
@@ -1215,18 +1264,31 @@ a {
     padding: 16px;
   }
 
+  .calculator-header {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .calculator-header h2 {
+    max-width: none;
+  }
+
+  .calculator-disclaimer {
+    padding: 10px 12px;
+  }
+
   .calculator-grid {
-    gap: 18px;
+    gap: 12px;
   }
 
   .calculator-form {
     gap: 11px;
-    margin-top: 18px;
+    padding: 12px;
   }
 
   .calculator-form input,
   .calculator-form select {
-    min-height: 50px;
+    min-height: 48px;
   }
 
   .main-result-card {
