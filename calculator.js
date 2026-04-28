@@ -21,8 +21,8 @@
     return document.getElementById("currency").value;
   }
 
-  function getPayByBankUnitPrice() {
-    return 0.5;
+  function getPayByBankUnitPrice(monthlyTransactions) {
+    return monthlyTransactions < 50000 ? 0.75 : 0.5;
   }
 
   function formatCurrency(amount, currency) {
@@ -51,7 +51,7 @@
 
     const monthlyVolume = monthlyTransactions * averageTransactionValue;
     const currentCardCost = monthlyVolume * currentCardFeeDecimal;
-    const unitPrice = getPayByBankUnitPrice();
+    const unitPrice = getPayByBankUnitPrice(monthlyTransactions);
     const aryzeInternalCost = monthlyTransactions * unitPrice;
     const estimatedMonthlySavings = currentCardCost - aryzeInternalCost;
     const estimatedYearlySavings = estimatedMonthlySavings * 12;

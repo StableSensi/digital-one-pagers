@@ -34,6 +34,10 @@
               For casinos, iGaming, and high-volume merchants that need
               predictable pricing, fewer disputes, and faster deposits via
               Mastercard Payment Rails.
+              <span class="mastercard-mark inline-mastercard-mark" aria-label="Mastercard">
+                <span class="mastercard-circle mastercard-red"></span>
+                <span class="mastercard-circle mastercard-orange"></span>
+              </span>
             </p>
             <div class="button-row">
               <a class="button button-solid" href="#calculator">
@@ -142,12 +146,14 @@
               <label>
                 <span>Monthly transactions</span>
                 <select id="monthlyTransactions" name="monthlyTransactions">
-                  <option value="750000">Under 1M</option>
-                  <option value="1000000" selected>1M - 2.5M</option>
-                  <option value="5000000">2.5M - 10M</option>
-                  <option value="25000000">10M - 50M</option>
-                  <option value="75000000">50M - 100M</option>
-                  <option value="125000000">100M+</option>
+                  <option value="25000">Under 50,000</option>
+                  <option value="75000">50,000 - 100,000</option>
+                  <option value="175000">100,000 - 250,000</option>
+                  <option value="375000">250,000 - 500,000</option>
+                  <option value="750000" selected>500,000 - 1M</option>
+                  <option value="1750000">1M - 2.5M</option>
+                  <option value="3750000">2.5M - 5M</option>
+                  <option value="5000000">5M+</option>
                 </select>
               </label>
 
