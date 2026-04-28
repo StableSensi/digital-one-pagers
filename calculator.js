@@ -21,12 +21,7 @@
     return document.getElementById("currency").value;
   }
 
-  // Pricing bands are used only to calculate the customer's indicative saving.
-  function getPayByBankUnitPrice(monthlyTransactions) {
-    if (monthlyTransactions < 1000000) {
-      return 1.0;
-    }
-
+  function getPayByBankUnitPrice() {
     return 0.5;
   }
 
@@ -56,7 +51,7 @@
 
     const monthlyVolume = monthlyTransactions * averageTransactionValue;
     const currentCardCost = monthlyVolume * currentCardFeeDecimal;
-    const unitPrice = getPayByBankUnitPrice(monthlyTransactions);
+    const unitPrice = getPayByBankUnitPrice();
     const aryzeInternalCost = monthlyTransactions * unitPrice;
     const estimatedMonthlySavings = currentCardCost - aryzeInternalCost;
     const estimatedYearlySavings = estimatedMonthlySavings * 12;
