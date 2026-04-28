@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandbox Access | Aryze Pay by Bank</title>
+    <meta
+      name="description"
+      content="Request sandbox access for Aryze Pay by Bank and share your company, payment setup, and testing intent."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="sandbox-page">
+    <div class="page-shell sandbox-shell">
+      <header class="site-header sandbox-header">
+        <a class="brand-mark" href="index.html">
+          <img src="assets/aryze-logo-wordmark.png" alt="Aryze" />
+        </a>
+        <a class="back-link" href="pay-by-bank.html">Pay by Bank</a>
+      </header>
+
+      <main class="sandbox-wrap">
+        <section class="sandbox-hero">
+          <p class="section-label">Aryze Pay by Bank</p>
+          <h1>Get sandbox access for Pay by Bank</h1>
+          <p class="sandbox-subheadline">
+            Test a direct account-to-account payment flow built for merchants
+            that need faster settlement, lower payment friction, and stronger
+            control over incoming payments.
+          </p>
+          <p class="sandbox-support">
+            Tell us about your business, payment setup, and what you want to
+            test. We'll use this to understand whether Pay by Bank is the right
+            fit and prepare the right sandbox access for your use case.
+          </p>
+          <a class="button sandbox-primary-cta" href="#sandbox-form-card">
+            Request sandbox access
+          </a>
+        </section>
+
+        <section class="sandbox-layout" aria-label="Sandbox request">
+          <aside class="sandbox-info">
+            <div class="sandbox-info-copy">
+              <p class="section-label">Sandbox overview</p>
+              <h2>Built for payment-driven merchants</h2>
+              <p>
+                Pay by Bank is designed for merchants where payments affect
+                margin, settlement, cash flow, customer experience, chargebacks,
+                refunds, reconciliation, and daily operations.
+              </p>
+            </div>
+
+            <div class="sandbox-benefits" aria-label="Sandbox benefits">
+              <article>
+                <span>01</span>
+                <p>Test the payment flow before going live</p>
+              </article>
+              <article>
+                <span>02</span>
+                <p>Share your payment setup and use case</p>
+              </article>
+              <article>
+                <span>03</span>
+                <p>Get the right sandbox access for your business</p>
+              </article>
+            </div>
+          </aside>
+
+          <section
+            id="sandbox-form-card"
+            class="sandbox-form-card"
+            aria-labelledby="sandbox-form-title"
+          >
+            <div class="sandbox-form-top">
+              <div>
+                <p id="stepText" class="step-text">Step 1 of 4</p>
+                <h2 id="sandbox-form-title">Your company</h2>
+              </div>
+              <div class="step-track" aria-hidden="true">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <form id="sandboxForm" novalidate>
+              <fieldset class="form-step active" data-step="0">
+                <div class="field-grid">
+                  <label class="form-field">
+                    <span>Work email</span>
+                    <input
+                      name="workEmail"
+                      type="email"
+                      placeholder="name@company.com"
+                      autocomplete="email"
+                      required
+                    />
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field">
+                    <span>Full name</span>
+                    <input
+                      name="fullName"
+                      type="text"
+                      placeholder="Your full name"
+                      autocomplete="name"
+                      required
+                    />
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field">
+                    <span>Company name</span>
+                    <input
+                      name="companyName"
+                      type="text"
+                      placeholder="Company Ltd"
+                      autocomplete="organization"
+                      required
+                    />
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field">
+                    <span>Company website</span>
+                    <input
+                      name="companyWebsite"
+                      type="text"
+                      inputmode="url"
+                      placeholder="https://company.com"
+                      autocomplete="url"
+                      data-url-field="true"
+                      required
+                    />
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field field-wide">
+                    <span>Your role</span>
+                    <select name="role" required>
+                      <option value="">Select role</option>
+                      <option>Founder / CEO</option>
+                      <option>CFO / Finance Lead</option>
+                      <option>Head of Payments</option>
+                      <option>Payments Manager</option>
+                      <option>Product Lead</option>
+                      <option>Operations Lead</option>
+                      <option>Risk / Fraud Lead</option>
+                      <option>CTO / Engineering Lead</option>
+                      <option>Developer / Technical Lead</option>
+                      <option>Other</option>
+                    </select>
+                    <small class="field-error"></small>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-step" data-step="1">
+                <div class="field-grid">
+                  <label class="form-field">
+                    <span>Where does your business operate?</span>
+                    <select name="market" required>
+                      <option value="">Select market</option>
+                      <option>United Kingdom</option>
+                      <option>Denmark</option>
+                      <option>European Union</option>
+                      <option>Global</option>
+                      <option>Other</option>
+                    </select>
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field">
+                    <span>What type of business are you?</span>
+                    <select name="businessType" required>
+                      <option value="">Select business type</option>
+                      <option>Gaming</option>
+                      <option>Betting</option>
+                      <option>Trading</option>
+                      <option>High-risk merchant</option>
+                      <option>E-commerce</option>
+                      <option>Wallet</option>
+                      <option>Remittance</option>
+                      <option>Marketplace</option>
+                      <option>Financial services</option>
+                      <option>Other payment-driven business</option>
+                    </select>
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field field-wide">
+                    <span>Which payment flow do you want to improve or test?</span>
+                    <select name="paymentFlow" required>
+                      <option value="">Select payment flow</option>
+                      <option>Checkout payments</option>
+                      <option>Deposits</option>
+                      <option>Top-ups</option>
+                      <option>Customer funding</option>
+                      <option>High-value payments</option>
+                      <option>Recurring payments</option>
+                      <option>Refunds</option>
+                      <option>Not sure yet</option>
+                    </select>
+                    <small class="field-error"></small>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-step" data-step="2">
+                <div class="field-grid">
+                  <div class="form-field field-wide checkbox-field" data-required-group="paymentMethods">
+                    <span>Which payment methods do you use today?</span>
+                    <div class="checkbox-grid">
+                      <label><input type="checkbox" name="paymentMethods" value="Cards" /> Cards</label>
+                      <label><input type="checkbox" name="paymentMethods" value="Bank transfer" /> Bank transfer</label>
+                      <label><input type="checkbox" name="paymentMethods" value="Open banking" /> Open banking</label>
+                      <label><input type="checkbox" name="paymentMethods" value="Wallets" /> Wallets</label>
+                      <label><input type="checkbox" name="paymentMethods" value="Crypto / stablecoins" /> Crypto / stablecoins</label>
+                      <label><input type="checkbox" name="paymentMethods" value="Local payment methods" /> Local payment methods</label>
+                      <label><input type="checkbox" name="paymentMethods" value="Other" /> Other</label>
+                    </div>
+                    <small class="field-error"></small>
+                  </div>
+
+                  <label class="form-field">
+                    <span>What is your estimated monthly transaction volume?</span>
+                    <select name="monthlyVolume" required>
+                      <option value="">Select volume</option>
+                      <option>Under 1,000 transactions</option>
+                      <option>1,000 to 10,000 transactions</option>
+                      <option>10,000 to 100,000 transactions</option>
+                      <option>100,000+ transactions</option>
+                      <option>Not sure</option>
+                    </select>
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field">
+                    <span>What is your average transaction size?</span>
+                    <select name="averageTransactionSize">
+                      <option value="">Select average size</option>
+                      <option>Under £25</option>
+                      <option>£25 to £100</option>
+                      <option>£100 to £500</option>
+                      <option>£500 to £2,500</option>
+                      <option>£2,500+</option>
+                      <option>Not sure</option>
+                    </select>
+                  </label>
+
+                  <div class="form-field field-wide checkbox-field" data-required-group="paymentChallenges">
+                    <span>What are your main payment challenges today?</span>
+                    <div class="checkbox-grid">
+                      <label><input type="checkbox" name="paymentChallenges" value="Card fees are too high" /> Card fees are too high</label>
+                      <label><input type="checkbox" name="paymentChallenges" value="Settlement is too slow" /> Settlement is too slow</label>
+                      <label><input type="checkbox" name="paymentChallenges" value="Chargebacks or disputes create problems" /> Chargebacks or disputes create problems</label>
+                      <label><input type="checkbox" name="paymentChallenges" value="Refunds are hard to manage" /> Refunds are hard to manage</label>
+                      <label><input type="checkbox" name="paymentChallenges" value="Reconciliation takes too much manual work" /> Reconciliation takes too much manual work</label>
+                      <label><input type="checkbox" name="paymentChallenges" value="Payment status visibility is weak" /> Payment status visibility is weak</label>
+                      <label><input type="checkbox" name="paymentChallenges" value="Card acceptance is unreliable" /> Card acceptance is unreliable</label>
+                      <label><input type="checkbox" name="paymentChallenges" value="We want a better alternative to card rails" /> We want a better alternative to card rails</label>
+                      <label><input type="checkbox" name="paymentChallenges" value="Other" /> Other</label>
+                    </div>
+                    <small class="field-error"></small>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-step" data-step="3">
+                <div class="field-grid">
+                  <div class="form-field field-wide checkbox-field" data-required-group="sandboxTests">
+                    <span>What do you want to test in the sandbox?</span>
+                    <div class="checkbox-grid">
+                      <label><input type="checkbox" name="sandboxTests" value="Payment initiation" /> Payment initiation</label>
+                      <label><input type="checkbox" name="sandboxTests" value="Customer bank authorisation flow" /> Customer bank authorisation flow</label>
+                      <label><input type="checkbox" name="sandboxTests" value="Checkout payment flow" /> Checkout payment flow</label>
+                      <label><input type="checkbox" name="sandboxTests" value="Deposit or top-up flow" /> Deposit or top-up flow</label>
+                      <label><input type="checkbox" name="sandboxTests" value="Payment status callbacks" /> Payment status callbacks</label>
+                      <label><input type="checkbox" name="sandboxTests" value="Refund handling" /> Refund handling</label>
+                      <label><input type="checkbox" name="sandboxTests" value="Reporting and reconciliation" /> Reporting and reconciliation</label>
+                      <label><input type="checkbox" name="sandboxTests" value="Merchant dashboard" /> Merchant dashboard</label>
+                      <label><input type="checkbox" name="sandboxTests" value="API integration" /> API integration</label>
+                      <label><input type="checkbox" name="sandboxTests" value="Not sure yet" /> Not sure yet</label>
+                    </div>
+                    <small class="field-error"></small>
+                  </div>
+
+                  <label class="form-field">
+                    <span>Do you have a technical team ready to test?</span>
+                    <select name="technicalTeam" required>
+                      <option value="">Select readiness</option>
+                      <option>Yes, we can test now</option>
+                      <option>Yes, but not immediately</option>
+                      <option>No, we need commercial review first</option>
+                      <option>Not sure</option>
+                    </select>
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field">
+                    <span>When would you like to start testing?</span>
+                    <select name="testingStart" required>
+                      <option value="">Select timeline</option>
+                      <option>As soon as possible</option>
+                      <option>Within 2 weeks</option>
+                      <option>Within 1 month</option>
+                      <option>Later this quarter</option>
+                      <option>Not sure yet</option>
+                    </select>
+                    <small class="field-error"></small>
+                  </label>
+
+                  <label class="form-field field-wide">
+                    <span>Anything else we should know?</span>
+                    <textarea
+                      name="additionalContext"
+                      placeholder="Tell us about your payment flow, current setup, or what you want to test."
+                    ></textarea>
+                  </label>
+                </div>
+              </fieldset>
+
+              <p class="form-consent">
+                By submitting this form, you agree that Aryze may contact you
+                about your sandbox request and related product information.
+              </p>
+
+              <div class="form-actions">
+                <button class="button button-ghost" type="button" id="backStep">
+                  Back
+                </button>
+                <button class="button button-solid" type="button" id="nextStep">
+                  Continue
+                </button>
+                <button class="button button-solid" type="submit" id="submitForm">
+                  Request sandbox access
+                </button>
+              </div>
+            </form>
+
+            <div class="sandbox-success" id="sandboxSuccess" tabindex="-1" hidden>
+              <p class="section-label">Request prepared</p>
+              <h2>Your sandbox request email is ready.</h2>
+              <p>
+                Your mail app should open with the sandbox request addressed to
+                Aryze. Send the email to share your company, payment use case,
+                and technical setup.
+              </p>
+              <a class="button button-solid" href="pay-by-bank.html">
+                Back to Pay by Bank
+              </a>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="sandbox-form.js"></script>
+  </body>
+</html>

@@ -60,13 +60,13 @@
     const mainResultLabel = document.getElementById("mainResultLabel");
     const mainResultValue = document.getElementById("mainResultValue");
     const savingsSupport = document.getElementById("savingsSupport");
-    const pricingMessage = document.getElementById("pricingMessage");
     const monthlyVolumeValue = document.getElementById("monthlyVolumeValue");
     const currentCardCostValue = document.getElementById("currentCardCostValue");
     const yearlySavingsValue = document.getElementById("yearlySavingsValue");
     const breakEvenValue = document.getElementById("breakEvenValue");
 
-    mainResultLabel.textContent = "Estimated monthly savings";
+    mainResultLabel.innerHTML =
+      'Estimated <strong class="label-emphasis">monthly</strong> savings';
     if (estimatedMonthlySavings < 0) {
       resultCard.classList.add("negative-savings");
       mainResultValue.textContent = "No estimated saving";
@@ -82,7 +82,6 @@
         "Based on your current card fee compared with indicative Aryze fixed transaction pricing.";
     }
 
-    pricingMessage.textContent = "";
     monthlyVolumeValue.textContent = formatCurrency(monthlyVolume, currency);
     currentCardCostValue.textContent = formatCurrency(currentCardCost, currency);
     yearlySavingsValue.textContent =
