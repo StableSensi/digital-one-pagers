@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -279,6 +283,12 @@ a {
   border-color: var(--line);
   background: var(--surface);
   color: var(--ink);
+}
+
+.button-mint {
+  border-color: #6fcf97;
+  background: #d9f5ea;
+  color: #001e2b;
 }
 
 .product-grid,
@@ -707,8 +717,7 @@ a {
   max-width: 1034px;
 }
 
-.calculator-form,
-.calculator-cta {
+.calculator-form {
   grid-column: 1;
 }
 
@@ -748,6 +757,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  grid-column: 1 / -1;
   align-self: start;
   justify-content: flex-start;
   padding: 14px;
@@ -759,7 +769,7 @@ a {
 }
 
 .calculator-cta .button {
-  flex: 1 1 150px;
+  flex: 1 1 220px;
   min-height: 42px;
   width: auto;
 }
@@ -1420,12 +1430,6 @@ a {
   line-height: 1.6;
 }
 
-.sandbox-primary-cta {
-  margin-top: 28px;
-  background: #007599;
-  color: white;
-}
-
 .sandbox-layout {
   display: grid;
   grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
@@ -1745,8 +1749,7 @@ a {
     flex-direction: column-reverse;
   }
 
-  .form-actions .button,
-  .sandbox-primary-cta {
+  .form-actions .button {
     width: 100%;
   }
 }

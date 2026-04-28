@@ -12,7 +12,12 @@
   const backButton = document.getElementById("backStep");
   const nextButton = document.getElementById("nextStep");
   const submitButton = document.getElementById("submitForm");
+  const formConsent = document.getElementById("formConsent");
   const successPanel = document.getElementById("sandboxSuccess");
+  const marketSelect = form.elements.market;
+  const averageTransactionSizeSelect = document.getElementById(
+    "averageTransactionSize",
+  );
   const requestRecipient = "rae@aryze.io";
   const stepTitles = [
     "Your company",
@@ -22,8 +27,35 @@
   ];
   let currentStep = 0;
 
+  const averageTransactionBands = {
+    "United Kingdom": ["Under £25", "£25 to £100", "£100 to £500", "£500 to £2,500", "£2,500+"],
+    Denmark: ["Under DKK 200", "DKK 200 to DKK 750", "DKK 750 to DKK 3,750", "DKK 3,750 to DKK 18,500", "DKK 18,500+"],
+    "European Union": ["Under €25", "€25 to €100", "€100 to €500", "€500 to €2,500", "€2,500+"],
+    Global: ["Under $25", "$25 to $100", "$100 to $500", "$500 to $2,500", "$2,500+"],
+    Other: ["Under $25", "$25 to $100", "$100 to $500", "$500 to $2,500", "$2,500+"],
+  };
+
   function getVisibleStep() {
     return steps[currentStep];
+  }
+
+  function updateAverageTransactionSizeOptions() {
+    const selectedMarket = marketSelect.value || "United Kingdom";
+    const bands =
+      averageTransactionBands[selectedMarket] || averageTransactionBands.Global;
+    const currentValue = averageTransactionSizeSelect.value;
+
+    averageTransactionSizeSelect.innerHTML = "";
+    ["Select average size", ...bands, "Not sure"].forEach((label, index) => {
+      const option = document.createElement("option");
+      option.value = index === 0 ? "" : label;
+      option.textContent = label;
+      averageTransactionSizeSelect.append(option);
+    });
+
+    averageTransactionSizeSelect.value = bands.includes(currentValue)
+      ? currentValue
+      : "";
   }
 
   function setError(container, message) {
@@ -127,6 +159,7 @@
     backButton.hidden = currentStep === 0;
     nextButton.hidden = currentStep === steps.length - 1;
     submitButton.hidden = currentStep !== steps.length - 1;
+    formConsent.hidden = currentStep !== steps.length - 1;
   }
 
   function getFormData() {
@@ -215,6 +248,8 @@
   form.addEventListener("input", revalidateChangedField);
   form.addEventListener("change", revalidateChangedField);
 
+  marketSelect.addEventListener("change", updateAverageTransactionSizeOptions);
+
   backButton.addEventListener("click", () => {
     currentStep = Math.max(0, currentStep - 1);
     updateStep();
@@ -244,5 +279,6 @@
     successPanel.focus();
   });
 
+  updateAverageTransactionSizeOptions();
   updateStep();
 })();

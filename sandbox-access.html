@@ -39,9 +39,6 @@
             test. We'll use this to understand whether Pay by Bank is the right
             fit and prepare the right sandbox access for your use case.
           </p>
-          <a class="button sandbox-primary-cta" href="#sandbox-form-card">
-            Request sandbox access
-          </a>
         </section>
 
         <section class="sandbox-layout" aria-label="Sandbox request">
@@ -245,14 +242,8 @@
 
                   <label class="form-field">
                     <span>What is your average transaction size?</span>
-                    <select name="averageTransactionSize">
+                    <select name="averageTransactionSize" id="averageTransactionSize">
                       <option value="">Select average size</option>
-                      <option>Under £25</option>
-                      <option>£25 to £100</option>
-                      <option>£100 to £500</option>
-                      <option>£500 to £2,500</option>
-                      <option>£2,500+</option>
-                      <option>Not sure</option>
                     </select>
                   </label>
 
@@ -328,7 +319,7 @@
                 </div>
               </fieldset>
 
-              <p class="form-consent">
+              <p class="form-consent" id="formConsent" hidden>
                 By submitting this form, you agree that Aryze may contact you
                 about your sandbox request and related product information.
               </p>
@@ -340,8 +331,8 @@
                 <button class="button button-solid" type="button" id="nextStep">
                   Continue
                 </button>
-                <button class="button button-solid" type="submit" id="submitForm">
-                  Request sandbox access
+                <button class="button button-mint" type="submit" id="submitForm" hidden>
+                  Submit request
                 </button>
               </div>
             </form>
